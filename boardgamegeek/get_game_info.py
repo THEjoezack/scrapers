@@ -33,6 +33,7 @@ split = 30
 f = open('games.csv', 'w')
 writer = csv.writer(f)
 writer.writerow((
+    'ID',
     'GAME',
     'RATING',
     'TIME',
@@ -55,6 +56,7 @@ for i in range(0, len(ids), split):
     for item in items:
 
         results = item.findAll('result', { 'value': 'Recommended'})
+        id = item['id']
         gname = get_val(item, 'name')
         avg = get_val(item.statistics.ratings, 'average')
         gplay = get_val(item, 'playingtime')
@@ -69,6 +71,7 @@ for i in range(0, len(ids), split):
         link = detailbase + item['id']
 
         writer.writerow((
+            id,
             gname,
             avg,
             gplay,
