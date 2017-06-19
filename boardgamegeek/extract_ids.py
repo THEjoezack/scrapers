@@ -1,7 +1,7 @@
 import csv
 
 
-filename = 'items.csv'
+filename = 'bgg-library.csv'
 reader = csv.reader(open(filename))
 col = reader.next().index('id')
 ids = [line[col] for line in reader]
