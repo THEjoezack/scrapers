@@ -10,6 +10,7 @@ board games on the site along with basic rating information.
 If you so desire, you can then use the extracted IDs to get information on all
 of the different games on the site.
 
+Run `python fetch_dtc_games.py` to first fetch all the bgg games
 Use `scrapy` to first run `spider.py` with `scrapy runspider spider.py -o items.csv`.
 This CSV will contain game names, IDs, and ratings.
 Next, run `python extract_ids.py` to put all of the IDs into a file called `ids.txt`.
